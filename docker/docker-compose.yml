@@ -1,0 +1,22 @@
+version: '2'
+services:
+  openvpn-tap:
+    cap_add:
+     - NET_ADMIN
+    image: kylemanna/openvpn
+    container_name: openvpn-tap
+    ports:
+     - "1194:1194/udp"
+    restart: always
+    volumes:
+     - ~/home/openvpn/openvpn-tap-data/conf:/etc/openvpn
+  openvpn-tun:
+    cap_add:
+     - NET_ADMIN
+    image: kylemanna/openvpn
+    container_name: openvpn-tun
+    ports:
+     - "1195:1194/udp"
+    restart: always
+    volumes:
+     - ~/home/openvpn/openvpn-tun-data/conf:/etc/openvpn
