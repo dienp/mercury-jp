@@ -1,6 +1,5 @@
 
 #!/bin/bash
-read -p 'Enter client name: ' var_clientname
 mkdir -p ./tap-users
-docker-compose run --rm openvpn-tap easyrsa build-client-full $var_clientname nopass
-docker-compose run --rm openvpn-tap ovpn_getclient $var_clientname > ./tap-users/$var_clientname-tap.ovpn
+docker-compose run --rm openvpn-tap easyrsa build-client-full $1 nopass
+docker-compose run --rm openvpn-tap ovpn_getclient $1 > ./tap-users/$1.ovpn
