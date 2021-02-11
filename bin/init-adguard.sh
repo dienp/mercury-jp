@@ -4,7 +4,8 @@ mkdir -p ~/home/adguardhome/conf
 
 # Deactivate DNSStubListener and update DNS server address.
 mkdir -p /etc/systemd/resolved.conf.d
-mv ./adguardhome.conf /etc/systemd/resolved.conf.d
+rm /etc/systemd/resolved.conf.d/adguardhome.conf
+cp adguardhome.conf /etc/systemd/resolved.conf.d
 mv /etc/resolv.conf /etc/resolv.conf.backup
 ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
 systemctl reload-or-restart systemd-resolved
