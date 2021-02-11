@@ -7,7 +7,6 @@ docker run --name adguardhome \
     -v ~/home/adguardhome/conf:/opt/adguardhome/conf \
     -p 53:53/tcp -p 53:53/udp \
     -p 80:80/tcp -p 3000:3000/tcp \
-    -p 67:67/udp -p 68:68/tcp -p 68:68/udp \
     -p 443:443/tcp \
     -p 853:853/tcp \
     -d adguard/adguardhome
