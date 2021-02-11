@@ -2,7 +2,9 @@
 var_servername="$(dig +short myip.opendns.com @resolver1.opendns.com)"
 echo "IP: ${var_servername}"
 echo "PORT: 1194"
-docker-compose run --rm openvpn-tap ovpn_genconfig -c -t -u udp://$var_servername:1194
-docker-compose run --rm openvpn-tap touch /etc/openvpn/vars
-docker-compose run --rm openvpn-tap ovpn_initpki nopass
-docker-compose --project-directory "../docker" up -d openvpn-tap
+docker_compose_file="../docker/docker-compose.yml";
+echo "Docker compose file: ${docker_compose_file}"
+docker-compose -f ${docker_compose_file} run --rm openvpn-tap ovpn_genconfig -c -t -u udp://$var_servername:1194
+docker-compose -f ${docker_compose_file} run --rm openvpn-tap touch /etc/openvpn/vars
+docker-compose -f ${docker_compose_file} run --rm openvpn-tap ovpn_initpki nopass
+docker-compose -f ${docker_compose_file} up -d openvpn-tap
