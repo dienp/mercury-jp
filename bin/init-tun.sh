@@ -1,4 +1,5 @@
 #!/bin/bash
+export EASYRSA_PKI="VPS"
 var_servername="$(dig +short myip.opendns.com @resolver1.opendns.com)"
 echo "IP: ${var_servername}"
 echo "PORT: 1195"
