@@ -10,6 +10,8 @@ services:
     restart: always
     volumes:
      - ~/home/openvpn/openvpn-tap-data/conf:/etc/openvpn
+    environment:
+     - EASYRSA_PKI="MERCURY-JP"
   openvpn-tun:
     cap_add:
      - NET_ADMIN
@@ -20,3 +22,5 @@ services:
     restart: always
     volumes:
      - ~/home/openvpn/openvpn-tun-data/conf:/etc/openvpn
+    environment:
+     - EASYRSA_PKI="MERCURY-JP"
