@@ -27,5 +27,5 @@ fi
 docker-compose -f ${docker_compose_file} run --rm ${docker_service_name} touch /etc/openvpn/vars
 docker-compose -f ${docker_compose_file} run --rm ${docker_service_name} ovpn_initpki nopass
 docker-compose -f ${docker_compose_file} up -d ${docker_service_name}
-./add-10-random-${vpn_type}-users.sh
+./add-10-random-users.sh $vpn_type
 
