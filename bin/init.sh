@@ -7,7 +7,8 @@ echo "IP: ${var_servername}"
 # tun or tap
 vpn_type=$1
 
-if [ -z "$vpn_type"]; then
+if [[ -z "$vpn_type" ]]
+then
     vpn_type="tap";
 fi
 
