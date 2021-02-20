@@ -1,5 +1,4 @@
 #!/bin/bash
-mkdir -p ./tun-users
 for i in {1..10}
 do
     prefix=$(openssl rand -base64 12);
